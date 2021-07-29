@@ -8,15 +8,20 @@ interface IUser {
   active:boolean
 }
 
+interface IResponse {
+  id:number;
+  name:string
+}
+
 function App() {
   //                     useState<tipoDato>("")
   const [newUser,setNewUser] = useState<string>('');
   const [users,setUsers] = useState<IUser[]>([]);
-  const userInput = useRef<HTMLInputElement>(null);
   const [filter,setFilter] = useState<IUser[]>([])
+  const userInput = useRef<HTMLInputElement>(null);
+  const [res,setRes] = useState([])
 
   const Register = (e : ElementFormEvent) => {
-    //console.log(e)
     e.preventDefault();
     addUsuer(newUser)
     setNewUser('')
@@ -26,6 +31,7 @@ function App() {
   const addUsuer = (name : string) : void  => {
     const newUsers : IUser[]= [...users, {name, active: true}];
     setUsers(newUsers);
+    setFilter(newUsers)
   }
   const activateUsuer = (index:number) => {
     const newUser : IUser[] = [...users];
@@ -47,13 +53,16 @@ function App() {
   };
   const handlechangeBuscarUsuariosActivos = (e:string) : void => {
     const filterUser : IUser[] = [...users]
-    filterUser.filter((item:IUser) => item.name.startsWith(e))
+    //filterUser.filter((item:IUser) => item.name.startsWith(e))
     setFilter(users.filter((item:IUser) => item.name.startsWith(e)))
   }
-  const handleClick = () => {
+  const handleClick = async () => {
 
     console.log("Solicitar todos")
-    return <h1>He solicitado todos</h1>
+    const data = await fetch("https://age-of-empires-2-api.herokuapp.com/api/v1/civilizations");
+    const res = await data.json();
+    console.log(res.civilizations)
+    setRes(res.civilizations)
   }
   
   return (
@@ -82,7 +91,9 @@ function App() {
     ))}
       <><br/>
         <button onClick={handleClick}>Solicitar todos!</button>
-        {}
+        {res.map((item: IResponse) => (
+            <li key={item.id}>{item.name}</li>
+        ))}
       </>    
     </>
   );
