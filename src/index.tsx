@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import 'bootswatch/dist/cosmo/bootstrap.min.css'
+import MonitorMain from './MonitorMain'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <MonitorMain />
   </React.StrictMode>,
   document.getElementById('root')
 );
