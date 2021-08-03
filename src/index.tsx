@@ -1,14 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+//import App from './App';
+//import MonitorMain from './MonitorMain'
 import reportWebVitals from './reportWebVitals';
-import 'bootswatch/dist/cosmo/bootstrap.min.css'
-import MonitorMain from './MonitorMain'
+import 'bootswatch/dist/materia/bootstrap.min.css'
+
+import TarjasMain from './TarjasMain'
 
 ReactDOM.render(
   <React.StrictMode>
-    <MonitorMain />
+    <TarjasMain />
   </React.StrictMode>,
   document.getElementById('root')
 );
