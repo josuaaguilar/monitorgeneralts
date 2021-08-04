@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import CardResult from "./Componentes/CardResult";
+import CardResult from "./Componentes/CardTarjaPartida";
 
 type ElementFormEvent = React.FormEvent<HTMLFormElement>
 type ElementInputChangeEvent = React.ChangeEvent<HTMLInputElement>

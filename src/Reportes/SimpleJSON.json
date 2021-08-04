@@ -1,0 +1,13 @@
+{
+    "dsDatos":{
+        "dtPretarja":[
+            {
+                "pretarja":122986,
+                "estado":"Pendiente de ingreso",
+                "peso":50,
+                "bultos":30,
+                "esPeligrosa":false
+            }
+        ]        
+    }
+}

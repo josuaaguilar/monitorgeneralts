@@ -1,9 +1,7 @@
 import Col from './Col';
-function Row(props:any){
-    return(<div className="Row">
-        <Col>
-        
-        </Col>
+function Row(){
+    return(<div className="Row ">
+                    
     </div>)/**Retorna JSX */
 
 }

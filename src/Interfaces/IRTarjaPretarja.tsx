@@ -1,19 +1,30 @@
+import dtPretarja from './IdtPretarja'
+interface IRTarjaPretarja {    
+    dsDatos:{
+        dtPretarja:dtPretarja[]        
+    }
+}
+export default IRTarjaPretarja
+
+/* 
 interface IRTarjaPretarja {
     nCodigo:number;
     sMensaje:string;
     dtDatos:any; 
     dsDatos:{
-        dtPretarja:[{
-            Contenedor:string,
-            conoci:string,
-            fecingre:string,
-            sello:string,
-            estado:string,
-            pretarja:number
-        }],
+        dtPretarja:dtPretarja,
         dtSubpartidas:[]
     },
-    oExtra:object,
+    oExtra:any,
     bProcesado:boolean 
 }
-export default IRTarjaPretarja
+*/
+/* 
+    i.partida
+    i.marca
+    i.embalajesic
+    i.bultos
+    i.peso
+    i.cveimo
+    i.pesoaveria
+*/

@@ -1,29 +1,27 @@
-import IRTarjaPretarja from "../Interfaces/IRTarjaPretarja"
-function Tst(props:any){
-    const IRTarja : IRTarjaPretarja = {
-        nCodigo:1,
-        sMensaje:"Test",
-        dtDatos: null,
-        dsDatos:{
-            dtPretarja:[{
-                Contenedor:"UETU",
-                conoci:"MEDU",
-                fecingre:"2021",
-                sello:"SL",
-                estado:"Ingresado",
-                pretarja:1234
-            }],
-            dtSubpartidas:[]
-        },
-        oExtra:{},
-        bProcesado:true
+interface dtPretarja {
+    pretarja: number;
+    estado: string
+    peso: number
+    bultos: number
+    esPeligrosa: boolean
+}
+interface Props {
+    SimpleJSON: {
+        dsDatos: {
+            dtPretarja: dtPretarja[]
+        }
     }
+}
+function Tst(props: Props) {
     console.log(props)
-    /* console.log(props.responseJSON.dsDatos)
-    console.log(props.responseJSON.dsDatos.dtPretarja[0])
-    console.log(props.responseJSON.dsDatos.dtPretarja[0].Contenedor) */
-    return(
-        <h1></h1>
+    console.log(props.SimpleJSON)
+    console.log(props.SimpleJSON.dsDatos)
+    props.SimpleJSON.dsDatos.dtPretarja.map(i => console.log(i))
+    return (
+        <div className="container">
+            <h1>Testeando interfaces</h1>
+            {props.SimpleJSON.dsDatos.dtPretarja.map((i,index)=><li key={index}>{i.pretarja}</li>)}
+        </div>
     )
 }
 export default Tst;

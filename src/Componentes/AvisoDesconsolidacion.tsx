@@ -1,32 +1,7 @@
-import NavOpctiones from './Componentes/NavOpciones'
-import TarjaPretarja from './Componentes/TarjaPretarja'
-import AvisoDesco from './Componentes/AvisoDesconsolidacion'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-function MonitorMain(props: object) {
-    console.log(props)
-    return (
-        <div className="container">
-            <div className="col-md-12">
-                <div className="row">
-                    <NavOpctiones/>
-                    <Router>
-                        <Link to="/">Inicio</Link>
-                        <Link to="/AvisoDesconsolidacion">Aviso Desco</Link>
-                        <Link to="/TarjaPretarja">TarjaPretarja</Link>
-                        <Switch>
-                            <Route exact path="/TarjaPretarja" component={TarjaPretarja} />
-                            <Route exact path="/AvisoDesconsolidacion" component={AvisoDesco} />
-                        </Switch>
-                    </Router>
 
-                </div>
-            </div>
-        </div>
-    )
-}
-export default MonitorMain;
-
-/* div className="accordion" id="accordionExample">
+export default function AvisoDesconsolidacion(){
+    return(
+        <div className="accordion" id="accordionExample">
   <div className="accordion-item">
     <h2 className="accordion-header" id="headingOne">
       <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
@@ -63,4 +38,6 @@ export default MonitorMain;
       </div>
     </div>
   </div>
-</div> */
+</div>
+    )
+}

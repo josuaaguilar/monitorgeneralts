@@ -1,25 +1,28 @@
-import TarjaPretarja from '../Interfaces/ITarjaPretarja'
 import IRTarjaPretarja from '../Interfaces/IRTarjaPretarja';
 interface Props {
-    dtPretarja: TarjaPretarja
+    TarjaJSON: IRTarjaPretarja
 }
-function CardResult(props: any) {
-    const dtPretarja = props.dtPretarja /**dtPretarja es un array de objetos partida */
+function CardTarjaPartida(props:Props) {
+    const dtPretarja = props.TarjaJSON.dsDatos.dtPretarja /**dtPretarja es un array de objetos partida */
     //props.responseJSON.dsDatos.dtPretarja.map((i:any, index:number) => console.log(i))
     //dtPretarja.map((i) => console.log(i))
-    const TarjaContenedor = dtPretarja.Contenedor;
-    const TarjaConocimiento = dtPretarja.conoci;
-    const TarjaFechaIngreso = dtPretarja.fecingre;
-    const TarjaContenedorSello = dtPretarja.sello;
-    const TarjaEstado = dtPretarja.estado;
-    const TarjaFolio = dtPretarja.pretarja;
+    const TarjaContenedor = dtPretarja[0].Contenedor;
+    const TarjaConocimiento = dtPretarja[0].conoci;
+    const TarjaFechaIngreso = dtPretarja[0].fecingre;
+    const TarjaContenedorSello = dtPretarja[0].sello;
+    const TarjaEstado = dtPretarja[0].estado;
+    const TarjaFolio = dtPretarja[0].pretarja;
     console.log(dtPretarja)
     return (
         <div className="card mb-1">
             <div className="card-header">
-                <p>{TarjaEstado} CON FOLIO: {TarjaFolio}</p>
                 <table>
                     <thead>
+                        <tr>
+                            <th>
+                            {TarjaEstado} CON FOLIO: {TarjaFolio}
+                            </th>
+                        </tr>
                         <tr>
                             <th><h6>Agente Aduanal</h6></th>
                             <th><h6>#Patente</h6></th>
@@ -47,16 +50,26 @@ function CardResult(props: any) {
                 <table className="table table-hover">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Marcas</th>
-                            <th>Embalaje</th>
-                            <th>Cantidad</th>
-                            <th>Peso</th>
-                            <th>IMO</th>
-                            <th>Averia</th>
+                            <th scope="col">#</th>
+                            <th scope="col">Marcas</th>
+                            <th scope="col">Embalaje</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Peso</th>
+                            <th scope="col">IMO</th>
+                            <th scope="col">Averia</th>
                         </tr>
                     </thead>
                     <tbody>
+                        {dtPretarja.map((i, index) => (
+                            <tr key={index} className="table-success">
+                                <th scope="row">{i.partida}</th>
+                                <td>{i.marca}</td>
+                                <td>{i.embalajesic}</td>
+                                <td>{i.bultos}</td>
+                                <td>{i.peso}</td>
+                                <td><span className={"badge rounded-pill bg-"+ ( i.cveimo ? "danger":"success") }>{i.cveimo ? i.cveimo:"NA"}</span></td>
+                                <td><span className={"badge rounded-pill bg-"+ ( i.pesoaveria>0?"danger":"success") }>{(i.pesoaveria > 0) ? "SI":"NA"}</span></td>
+                            </tr>))}
                         {/* dtPretarja.map(
                             (i:any, index: number) => (
                                 <tr key={index}>
@@ -76,4 +89,4 @@ function CardResult(props: any) {
             </div>
         </div>) /**Retorna JSX */
 }
-export default CardResult;
+export default CardTarjaPartida;

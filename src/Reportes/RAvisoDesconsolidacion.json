@@ -1,0 +1,46 @@
+{
+    "dsDatos": {
+        "dtAvisosDescon": [
+            {
+                "Referencia": "2100158725",
+                "Contenedo": "BMOU5776299",
+                "Servicio": 2021271696.0,
+                "Aviso": 24390.0,
+                "Acuse": "GK168/FYrp3UR4Vb9s0L3A==",
+                "FAviso": "04/01/2021 08:48:32",
+                "sTipoDesco": "TOTAL",
+                "sEstado": "TERMINADO"
+            },
+            {
+                "Referencia": "2100158726",
+                "Contenedor": "MRKU3138609",
+                "Servicio": 2021271697.0,
+                "Aviso": 24401.0,
+                "Acuse": "z8ns4RBKD7qs3Wq5f7gq0w==",
+                "FAviso": "06/01/2021 16:11:04",
+                "sTipoDesco": "TOTAL",
+                "sEstado": "TERMINADO"
+            },
+            {
+                "Referencia": "2100158802",
+                "Contenedor": "CAIU9870370",
+                "Servicio": 2021271782.0,
+                "Aviso": 24406.0,
+                "Acuse": "5qX9g23AS7yuRmhTqe2ukQ==",
+                "FAviso": "08/01/2021 11:22:13",
+                "sTipoDesco": "TOTAL",
+                "sEstado": "TERMINADO"
+            },
+            {
+                "Referencia": "2100158814",
+                "Contenedor": "CAIU9815789",
+                "Servicio": 2021271796.0,
+                "Aviso": 24404.0,
+                "Acuse": "z5+p6TGWYAqrbVNpjJ0vgA==",
+                "FAviso": "07/01/2021 18:04:14",
+                "sTipoDesco": "TOTAL",
+                "sEstado": "TERMINADO"
+            }
+        ]
+    }
+}
