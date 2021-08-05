@@ -3,12 +3,12 @@
         "dtAvisosDescon": [
             {
                 "Referencia": "2100158725",
-                "Contenedo": "BMOU5776299",
+                "Contenedor": "BMOU5776299",
                 "Servicio": 2021271696.0,
                 "Aviso": 24390.0,
                 "Acuse": "GK168/FYrp3UR4Vb9s0L3A==",
                 "FAviso": "04/01/2021 08:48:32",
-                "sTipoDesco": "TOTAL",
+                "sTipoDesco": "PARCIAL",
                 "sEstado": "TERMINADO"
             },
             {
@@ -18,8 +18,8 @@
                 "Aviso": 24401.0,
                 "Acuse": "z8ns4RBKD7qs3Wq5f7gq0w==",
                 "FAviso": "06/01/2021 16:11:04",
-                "sTipoDesco": "TOTAL",
-                "sEstado": "TERMINADO"
+                "sTipoDesco": "PARCIAL",
+                "sEstado": "INICIADO"
             },
             {
                 "Referencia": "2100158802",
@@ -40,7 +40,48 @@
                 "FAviso": "07/01/2021 18:04:14",
                 "sTipoDesco": "TOTAL",
                 "sEstado": "TERMINADO"
+            },
+            {
+                "Referencia": "2100158790",
+                "Contenedor": "TGHU6726702",
+                "Servicio": 2021271767.0,
+                "Aviso": 24403.0,
+                "Acuse": "jBFzpfYRT4P+h8dio5PwGw==",
+                "FAviso": "07/01/2021 17:37:27",
+                "sTipoDesco": "TOTAL",
+                "sEstado": "TERMINADO"
+            },
+            {
+                "Referencia": "2100158812",
+                "Contenedor": "TRHU1261163",
+                "Servicio": 2021271794.0,
+                "Aviso": 24408.0,
+                "Acuse": "qmbkQlk4QEbHN6iGQNAs2A==",
+                "FAviso": "08/01/2021 11:24:05",
+                "sTipoDesco": "TOTAL",
+                "sEstado": "TERMINADO"
+            },
+            {
+                "Referencia": "2100158789",
+                "Contenedor": "CAIU4337157",
+                "Servicio": 2021271766.0,
+                "Aviso": 24402.0,
+                "Acuse": "ZNMUEPmPGJHwcyCHlTunOQ==",
+                "FAviso": "07/01/2021 16:27:12",
+                "sTipoDesco": "TOTAL",
+                "sEstado": "TERMINADO"
+            },
+            {
+                "Referencia": "2100158769",
+                "Contenedor": "DFSU6772155",
+                "Servicio": 2021271741.0,
+                "Aviso": 24405.0,
+                "Acuse": "GGYfnyviThEfLewmpJVZPg==",
+                "FAviso": "07/01/2021 18:26:50",
+                "sTipoDesco": "TOTAL",
+                "sEstado": "TERMINADO"
             }
         ]
     }
 }
+
