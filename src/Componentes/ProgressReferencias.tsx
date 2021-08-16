@@ -57,7 +57,7 @@ export default function ProgressReferencias(props:Props) {
                            <div className="card-header">Buque: {i.Buque}</div>
                            <div className="card-body">
                                <h4>Estado: {i.Estado == 1 ? 'Preliminar':'Programada'}</h4>
-                               <div className="card-text">Referencia SORF: {i.FolioReferencia}</div>
+                               <div className="card-text">Referencia SORF II: {i.FolioReferencia}</div>
                            </div>
                        </div>
                    </div>
