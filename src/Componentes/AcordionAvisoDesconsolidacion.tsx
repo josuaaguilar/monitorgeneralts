@@ -8,11 +8,11 @@ export default function AcordionAvisoDesconsolidacion(props: Props) {
     //dtAvisosDescon.map(i => console.log(i)) // Este me devuelve cada registro
     //console.log(props)
     return (
-        <div className="container">
+        <div className="container" id={"AvisoDesconsolidacion"}>
             <div className="accordion" id="accordionExample">
                 {dtAvisosDescon.map((i, index: number) => (
-                    <div className="accordion-item">
-                        <h2 className="accordion-header" id={index.toString()}>
+                    <div className="accordion-item" key={index}>
+                        <h2 className="accordion-header" id={index.toString() + "avisoDesco"}>
                             <button
                                 className="accordion-button collapsed"
                                 type="button"
@@ -27,11 +27,11 @@ export default function AcordionAvisoDesconsolidacion(props: Props) {
                             id={"collapse" + (index.toString())}
                             className="accordion-collapse collapse"
                             aria-controls={index.toString()}
-                            aria-parent="#accordionExample">
+                            /* aria-parent="#accordionExample" */>
                             <div className="accordion-body">
                                 <strong>Acuse: </strong>{i.Acuse}
                                 <strong>Fecha de aviso</strong> {i.FAviso}
-                                <strong>Tipo Aviso</strong> <span className={"badge rounded-pill bg-" + ((i.sEstado == "TERMINADO") ? "success" : "warning")}>{i.sTipoDesco ? i.sTipoDesco : "SA"}</span>
+                                <strong>Tipo Aviso</strong> <span className={"badge rounded-pill bg-" + ((i.sEstado === "TERMINADO") ? "success" : "warning")}>{i.sTipoDesco ? i.sTipoDesco : "SA"}</span>
                             </div>
                         </div>
                     </div>))}

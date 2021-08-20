@@ -1,24 +1,24 @@
 export default interface IReferencias {    
         IdReferencia: Number;
-        FolioReferencia: String;
+        FolioReferencia: string;
         IdReferenciaOrigen: Number;
-        FolioReferenciaOrigen: String;
+        FolioReferenciaOrigen: string;
         IdReferenciaDestino: Number;
-        FolioReferenciaDestino: String;
+        FolioReferenciaDestino: string;
         FechaCambioOperacion: null;
         EsRevalidado: Boolean;
-        ReferenciaAgenteAduanal: String;
+        ReferenciaAgenteAduanal: string;
         TipoOperacionAduanera: Number;
-        NumeroContenedor: String;
-        Tarjas: String;
-        BlBooking: String;
-        ClaveUnica: String;
+        NumeroContenedor: string;
+        Tarjas: string;
+        BlBooking: string;
+        ClaveUnica: string;
         Estado: Number;
-        FechaEntrada: String;
+        FechaEntrada: string;
         EsFrio: Boolean;
-        AgenteAduanal: String;
+        AgenteAduanal: string;
         TipoMercancia: Number;
-        FechaCaptura: String;
-        Cliente: String;
-        Buque: String;
+        FechaCaptura: string;
+        Cliente: string;
+        Buque: string;
     }

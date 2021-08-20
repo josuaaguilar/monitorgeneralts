@@ -12,9 +12,9 @@ function CardTarjaPartida(props: Props) {
     const TarjaContenedorSello = dtPretarja[0].sello;
     const TarjaEstado = dtPretarja[0].estado;
     const TarjaFolio = dtPretarja[0].pretarja;
-    console.log(dtPretarja)
+    //console.log(dtPretarja)
     return (
-        <div className="container">
+        <div className="container" id={"TarjaPretarja"}>
             <div className="card mb-1">
                 <div className="card-header m-1">
                     <table >

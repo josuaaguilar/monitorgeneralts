@@ -25,15 +25,15 @@ export default function NavOpctiones(props: any) {
           </button>
           <div className="collapse navbar-collapse" id="navbarColor01">
             <ul className="navbar-nav me-auto">
-              <li className="nav-item">
+              <li className="nav-item" id={"Referencias"}>
                 <Link to="/Referencias" className="nav-link active">Referencias
                   <span className="visually-hidden">(current)</span>
                 </Link>
               </li>
-              <li className="nav-item">
+              <li className="nav-item" id={"TarjaPretarja"}>
                 <Link to="/TarjaPretarja" className="nav-link">TarjaPretarja</Link>
               </li>
-              <li className="nav-item">
+              <li className="nav-item" id={"AvisoDesco"}>
                 <Link to="/AvisoDesconsolidacion" className="nav-link">AvisoDesconsolidacion</Link>
               </li>
             </ul>

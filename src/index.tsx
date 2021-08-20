@@ -2,15 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 //import App from './App';
-import MonitorMain from './MonitorMain'
+//import MonitorMain from './MonitorMain'
+import {Auth0Provider} from '@auth0/auth0-react'
 import reportWebVitals from './reportWebVitals';
 import 'bootswatch/dist/materia/bootstrap.min.css'
+import RolesMain from './RolesMain'
+//import RolesProvider from './RolesProvider'
 
 //import TarjasMain from './TarjasMain'
 
 ReactDOM.render(
   <React.StrictMode>
-    <MonitorMain />
+    <Auth0Provider domain="dev-dpcvu51y.us.auth0.com" clientId="pcNcf2JrfWuRLhy3QfavulSNfTsEbqrJ" redirectUri={window.location.origin}>
+    <RolesMain/>
+    </Auth0Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
