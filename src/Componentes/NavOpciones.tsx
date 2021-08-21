@@ -3,10 +3,11 @@ import TarjaPretarja from "./TarjaPretarja"
 import AvisoDesconsolidacion from "./AvisoDesconsolidacion"
 import Referencias from "./Referencias"
 
-import React, { useState } from "react"
+import { useState } from "react"
 
 export default function NavOpctiones(props: any) {
-  const [BlBooking,setBlBooking] = useState<string>(''); //Settea el estado en NavOpciones
+  //const [BlBooking,setBlBooking] = useState<string>(''); //Settea el estado en NavOpciones
+  const [Filter,setFilter] = useState("");
   return (
     <> {/* <> nos permite abreviar un <Fragment> </Fragment>. Es útil para retornar varios elementos jsx*/}
     <Router>
@@ -38,8 +39,8 @@ export default function NavOpctiones(props: any) {
               </li>
             </ul>
             <form className="d-flex">
-              <input className="form-control me-sm-2" type="text" placeholder="Bl/Booking" value={BlBooking} onChange={e => setBlBooking(e.target.value.toUpperCase())}/>
-              <button className="btn btn-secondary my-2 my-sm-0" type="submit">Buscar!</button>
+              <input className="form-control me-sm-2" type="text" placeholder="Bl/Booking" value={Filter} onChange={e => setFilter(e.target.value.toUpperCase())}/>
+              <button className="btn btn-secondary my-2 my-sm-0">Buscar!</button>
             </form>
           </div>
         </div>
@@ -47,7 +48,7 @@ export default function NavOpctiones(props: any) {
       <Switch>
         <Route exact path="/TarjaPretarja" component={TarjaPretarja} />
         <Route exact path="/AvisoDesconsolidacion" component={AvisoDesconsolidacion} />
-        <Route exact path="/Referencias" component={Referencias} />
+        <Route exact path="/Referencias"><Referencias Filter={Filter}/></Route>
       </Switch>
     </Router>
   </>

@@ -17,7 +17,9 @@ function ProgressReferencias(props: Props) {
         width: '10%'
     }
     //props.dsDatos.map(e => console.log(e));
+    //props.dsDatos.map(Referencias => console.log(Referencias))
     return (
+        
         <div className="container">
             {props.dsDatos.map((e, index: number) => (
                 <div className="row" key={index}>
