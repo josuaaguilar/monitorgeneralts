@@ -2,10 +2,35 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom"
 import TarjaPretarja from "./TarjaPretarja"
 import AvisoDesconsolidacion from "./AvisoDesconsolidacion"
 import Referencias from "./Referencias"
-
 import { useState } from "react"
+//import {useAuth0} from '@auth0/auth0-react'
+import Index from './index'
 
+
+type clicSubmit = React.FormEvent<HTMLFormElement>
+const axios = require('axios').default;
+
+//const {user} = useAuth0();
 export default function NavOpctiones(props: any) {
+  
+  const submitHandler = (click : clicSubmit) => {
+    click.preventDefault();
+    //console.log('En el handler');
+    const options = {
+      method: "GET",
+      url : "http://localhost:3010/api/public",
+      headers: {
+        authorization : "pcNcf2JrfWuRLhy3QfavulSNfTsEbqrJ"
+      }
+    }
+
+    axios.request(options).then(function(response:any){
+      console.log(response.data)
+    }).catch(function (error:any) {
+     //console.log(error)
+    });
+
+  }
   //const [BlBooking,setBlBooking] = useState<string>(''); //Settea el estado en NavOpciones
   const [Filter,setFilter] = useState("");
   return (
@@ -38,7 +63,7 @@ export default function NavOpctiones(props: any) {
                 <Link to="/AvisoDesconsolidacion" className="nav-link">AvisoDesconsolidacion</Link>
               </li>
             </ul>
-            <form className="d-flex">
+            <form className="d-flex" onSubmit={submitHandler}>
               <input className="form-control me-sm-2" type="text" placeholder="Bl/Booking" value={Filter} onChange={e => setFilter(e.target.value.toUpperCase())}/>
               <button className="btn btn-secondary my-2 my-sm-0">Buscar!</button>
             </form>
@@ -48,7 +73,8 @@ export default function NavOpctiones(props: any) {
       <Switch>
         <Route exact path="/TarjaPretarja" component={TarjaPretarja} />
         <Route exact path="/AvisoDesconsolidacion" component={AvisoDesconsolidacion} />
-        <Route exact path="/Referencias"><Referencias Filter={Filter}/></Route>
+        <Route exact path="/Referencias"><Referencias Filter={Filter} /></Route>
+        <Route exact path="/" component = {Index}/>
       </Switch>
     </Router>
   </>

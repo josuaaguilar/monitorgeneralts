@@ -5,7 +5,7 @@ import { Component } from "react"; */
 //import Need from "./Need";
 import { LoginButton } from './Componentes/Login';
 import { Profile } from './Componentes/Profile';
-import { LogoutButton } from './Componentes/Logout';
+//import LogoutButton from './Componentes/Logout';
 import { useAuth0 } from '@auth0/auth0-react';
 //const { CredentialProvider } = require('react-rbac-guard');
 //const { guardFactory } = require("react-rbac-guard");
@@ -20,20 +20,17 @@ const CommentManager = guardFactory(NeedManageComment)
 const UserManager = guardFactory(NeedManageUser)
 const PostManager = guardFactory(NeedManagePost)
 ------------------------------------------------------- */
-
+/* Validar si requiere rutas en este componente:
+Route login
+Route logout
+Route Home */
 function RolesMain() {
     //const credentials = "CanManageComment"
     const { isAuthenticated } = useAuth0();
     return (
-        <div className="container">
-            {isAuthenticated ? (
-                <>
-                    <Profile />
-                    <LogoutButton />
-                        
-                </>
-            ) : <LoginButton />}
+        <div className="">
 
+            { isAuthenticated ? <Profile/> : <LoginButton/> }
         </div>
 
     )
