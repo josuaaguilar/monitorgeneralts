@@ -5,6 +5,8 @@ import Referencias from "./Referencias"
 import { useState } from "react"
 //import {useAuth0} from '@auth0/auth0-react'
 import Index from './index'
+import {Profile} from './Profile'
+import Usuarios from "./Usuarios"
 
 
 type clicSubmit = React.FormEvent<HTMLFormElement>
@@ -18,7 +20,7 @@ export default function NavOpctiones(props: any) {
     //console.log('En el handler');
     const options = {
       method: "GET",
-      url : "http://localhost:3010/api/public",
+      url : "http://localhost:3010/api/Usuarios",
       headers: {
         authorization : "pcNcf2JrfWuRLhy3QfavulSNfTsEbqrJ"
       }
@@ -62,6 +64,12 @@ export default function NavOpctiones(props: any) {
               <li className="nav-item" id={"AvisoDesco"}>
                 <Link to="/AvisoDesconsolidacion" className="nav-link">AvisoDesconsolidacion</Link>
               </li>
+              <li className="nav-item" id="Perfil">
+                <Link to="/Perfil" className="nav-link">Perfil</Link>
+              </li>
+              <li className="nav-item" id="Usuarios">
+                <Link to="/Usuarios" className="nav-link">Usuarios</Link>
+              </li>
             </ul>
             <form className="d-flex" onSubmit={submitHandler}>
               <input className="form-control me-sm-2" type="text" placeholder="Bl/Booking" value={Filter} onChange={e => setFilter(e.target.value.toUpperCase())}/>
@@ -75,6 +83,8 @@ export default function NavOpctiones(props: any) {
         <Route exact path="/AvisoDesconsolidacion" component={AvisoDesconsolidacion} />
         <Route exact path="/Referencias"><Referencias Filter={Filter} /></Route>
         <Route exact path="/" component = {Index}/>
+        <Route exact path="/Usuarios" component={Usuarios} />
+        <Route exact path="/Perfil" ><Profile /></Route>
       </Switch>
     </Router>
   </>

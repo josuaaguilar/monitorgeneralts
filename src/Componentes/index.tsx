@@ -6,7 +6,7 @@ import IReferencia from '../Interfaces/IReferencia'
 
 export default function Index() {
     const {getAccessTokenSilently}  = useAuth0();
-    const [Referencia, setReferencia] = useState<IReferencia>();
+    const [Referencias, setReferencia] = useState<IReferencia[]>();
 
     useEffect(() => {
         //console.log("UseEffect en Index!") 
@@ -21,9 +21,10 @@ export default function Index() {
                     {
                         headers: { authorization: "Bearer " + accessToken }
                     });
-                const ReferenciasResponse: IReferencia = await ReferenciasRequest.json();
-                //console.log(ReferenciasResponse.nFolio)
-                setReferencia(ReferenciasResponse)
+                const ReferenciasResponse = await ReferenciasRequest.json();
+                //ReferenciasResponse.referencias.map((i:IReferencia)=>{console.log(i)})
+
+                setReferencia(ReferenciasResponse.referencias)
             }
             catch (e) {
                 console.log(e.message)
@@ -35,20 +36,30 @@ export default function Index() {
     //console.log(user)
     return (
         <div className="container">
-            <div className="card">
+            {Referencias?.map(Referencia => (
+            <div className="card mb-1" key={Referencia.nFolio}>
                 <div className="card-item">
                     <div className="card-header">
-                        <h3>Folio de Referencia SORF: {Referencia?.nFolio}</h3>
+                        <h4>Referencia SORF: <small className="text-muted">{Referencia.nFolio}</small></h4>
+                        <span className={"badge bg-"+(Referencia.nTipoMercancia === 1 ? "primary":"success")}>{Referencia.nTipoMercancia === 1 ? 'CONTENEDOR':'CARGA SUELTA'}</span>
+                        <span className={"badge bg-"+(Referencia.nTrafico === 1 ? "primary":"success")}>{Referencia.nTrafico === 1 ? 'IMPO':'EXPO'}</span>
+                        <h5>Agente Aduanal: <small>{Referencia.oAgenteAduanal.sPatente}-{Referencia.oAgenteAduanal.sNombre}</small>  {Referencia.sReferenciaAA}</h5>
                     </div>
-                    <div className="card-body">
-                        <h4>CLIENTE: {Referencia?.oCliente.sRazonSocial}</h4>
-                        <div className="card-text"><h4>RFC: {Referencia?.oCliente.sRFC}</h4></div>
-
+                    <ul className="list-group list-group-flush">
+                        <li className="list-group-item">
+                            <h4>Cliente: <small className="text-muted"> {Referencia.oCliente.sRazonSocial}</small></h4>
+                        </li>
+                        <li className="list-group-item">
+                            <h4>Facturar A: <small className="text-muted"> {Referencia.oFacturarA.sRazonSocial}</small></h4>
+                        </li>
+                    </ul>
+                    <div className="card-footer">
+                        <p>Razón Social: {Referencia.oCliente.sRazonSocial}</p>
                     </div>
+                    
                 </div>
-
-            </div>
-
+                
+            </div>))}
         </div>
     ) //Retorna JSX
 

@@ -50,13 +50,18 @@ export const Profile = () => {
     }
     if (isAuthenticated) {
         return (
-            <div className="grid">
-                <NavOpctiones/>
-                <div className="grid-item">
+            <div className="container">
+                
+                <div className="card mb-1">
+                    <div className="card-header">
                     <img src={user?.picture} alt={user?.name} />
+                    </div>
+                    <div className="card-body">
                     <h2>{user?.name}</h2>
                     <p>{user?.email}</p>
-                    <h3>User Metadata: {userMetadata?.nFolio} </h3>
+                    </div>
+                    
+                    
                     <LogOut/>
                 </div>
 
