@@ -157,7 +157,7 @@
                 "cveimo": "9",
                 "un": "3077",
                 "incidencias": "EMBALAJE DEFICIENTE, ROTO",
-                "pesoaveria": 1030.0000,
+                "pesoaveria": 0,
                 "refrig": false,
                 "per": false
             }

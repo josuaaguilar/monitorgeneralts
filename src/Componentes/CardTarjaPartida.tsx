@@ -4,15 +4,12 @@ interface Props {
 }
 function CardTarjaPartida(props: Props) {
     const dtPretarja = props.TarjaJSON.dsDatos.dtPretarja /**dtPretarja es un array de objetos partida */
-    //props.responseJSON.dsDatos.dtPretarja.map((i:any, index:number) => console.log(i))
-    //dtPretarja.map((i) => console.log(i))
     const TarjaContenedor = dtPretarja[0].Contenedor;
     const TarjaConocimiento = dtPretarja[0].conoci;
     const TarjaFechaIngreso = dtPretarja[0].fecingre;
     const TarjaContenedorSello = dtPretarja[0].sello;
     const TarjaEstado = dtPretarja[0].estado;
     const TarjaFolio = dtPretarja[0].pretarja;
-    //console.log(dtPretarja)
     return (
         <div className="container" id={"TarjaPretarja"}>
             <div className="card mb-1">
@@ -61,31 +58,17 @@ function CardTarjaPartida(props: Props) {
                             </tr>
                         </thead>
                         <tbody>
-                            {dtPretarja.map((i, index) => (
+                            {dtPretarja.map((TarjaPretarja, index) => (
                                 <tr key={index} className="table-success">
-                                    <th scope="row">{i.partida}</th>
-                                    <td>{i.marca}</td>
-                                    <td>{i.embalajesic}</td>
-                                    <td>{i.bultos}</td>
-                                    <td>{i.peso}</td>
-                                    <td><span className={"badge rounded-pill bg-" + (i.cveimo ? "danger" : "success")}>{i.cveimo ? i.cveimo : "NA"}</span></td>
-                                    <td><span className={"badge rounded-pill bg-" + (i.pesoaveria > 0 ? "danger" : "success")}>{(i.pesoaveria > 0) ? "SI" : "NA"}</span></td>
+                                    <th scope="row">{TarjaPretarja.partida}</th>
+                                    <td>{TarjaPretarja.marca}</td>
+                                    <td>{TarjaPretarja.embalajesic}</td>
+                                    <td>{TarjaPretarja.bultos}</td>
+                                    <td>{TarjaPretarja.peso}</td>
+                                    <td><span className={"badge rounded-pill bg-" + (TarjaPretarja.cveimo ? "danger" : "success")}>{TarjaPretarja.cveimo ? TarjaPretarja.cveimo : "NA"}</span></td>
+                                    <td><span className={"badge rounded-pill bg-" + (TarjaPretarja.pesoaveria > 0 ? "danger" : "success")}>{(TarjaPretarja.pesoaveria > 0) ? "SI" : "NA"}</span></td>
                                 </tr>))}
-                            {/* dtPretarja.map(
-                            (i:any, index: number) => (
-                                <tr key={index}>
-                                    <td>{i.partida}</td>
-                                    <td>{i.marca}</td>
-                                    <td>{i.embalajesic}</td>
-                                    <td>{i.bultos}</td>
-                                    <td>{i.peso}</td>
-                                    <td><span className={"badge rounded-pill " + (i.cveimo ? "bg-danger" : "bg-success")}>{i.cveimo ? i.cveimo : "NA"}</span></td>
-                                    <td><span className={"badge rounded-pill " + ((i.pesoaveria > 0) ? "bg-danger" : "bg-success")}>{(i.pesoaveria > 0) ? i.pesoaveria : "NA"}</span></td>
-                                </tr>
-                            )
-                        ) */}
                         </tbody>
-
                     </table>
                 </div>
             </div>

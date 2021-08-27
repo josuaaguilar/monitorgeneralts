@@ -8,7 +8,6 @@ export default function Usuarios(){
             setUsers(usuarios);
         })
     }
-    console.log(users)
     useEffect(() => {
         requestUsers();
     },[])

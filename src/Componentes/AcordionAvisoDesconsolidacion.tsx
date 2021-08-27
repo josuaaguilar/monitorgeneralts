@@ -4,13 +4,10 @@ interface Props {
 }
 export default function AcordionAvisoDesconsolidacion(props: Props) {
     const dtAvisosDescon = props.RAvisoDesconsolidacionJSON.dsDatos.dtAvisosDescon;
-    //console.log(dtAvisosDescon)
-    //dtAvisosDescon.map(i => console.log(i)) // Este me devuelve cada registro
-    //console.log(props)
     return (
         <div className="container" id={"AvisoDesconsolidacion"}>
             <div className="accordion" id="accordionExample">
-                {dtAvisosDescon.map((i, index: number) => (
+                {dtAvisosDescon.map((AvisoDesco, index: number) => (
                     <div className="accordion-item" key={index}>
                         <h2 className="accordion-header" id={index.toString() + "avisoDesco"}>
                             <button
@@ -20,18 +17,18 @@ export default function AcordionAvisoDesconsolidacion(props: Props) {
                                 data-bs-target={"#collapse" + (index.toString())}
                                 aria-expanded="false"
                                 aria-controls={"collapse" + (index.toString())}>
-                                CN: {i.Contenedor}
+                                CN: {AvisoDesco.Contenedor}
                             </button>
                         </h2>
                         <div
                             id={"collapse" + (index.toString())}
                             className="accordion-collapse collapse"
                             aria-controls={index.toString()}
-                            /* aria-parent="#accordionExample" */>
+                        >
                             <div className="accordion-body">
-                                <strong>Acuse: </strong>{i.Acuse}
-                                <strong>Fecha de aviso</strong> {i.FAviso}
-                                <strong>Tipo Aviso</strong> <span className={"badge rounded-pill bg-" + ((i.sEstado === "TERMINADO") ? "success" : "warning")}>{i.sTipoDesco ? i.sTipoDesco : "SA"}</span>
+                                <strong>Acuse: </strong>{AvisoDesco.Acuse}
+                                <strong>Fecha de aviso</strong> {AvisoDesco.FAviso}
+                                <strong>Tipo Aviso</strong> <span className={"badge rounded-pill bg-" + ((AvisoDesco.sEstado === "TERMINADO") ? "success" : "warning")}>{AvisoDesco.sTipoDesco ? AvisoDesco.sTipoDesco : "SA"}</span>
                             </div>
                         </div>
                     </div>))}

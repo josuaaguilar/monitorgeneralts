@@ -1,13 +1,23 @@
+import { LoginButton } from './Componentes/Login';
+import { useAuth0 } from '@auth0/auth0-react';
+import NavOpctiones from './Componentes/NavOpciones';
+function RolesMain() {
+    const { isAuthenticated } = useAuth0();
+    return (
+        <div>
+
+            { isAuthenticated ? <NavOpctiones/> : <LoginButton/> }
+        </div>
+    )
+}
+export default RolesMain;
+
 /* import Referencias from './Componentes/Referencias'
 import AvisoDesconsolidacion from "./Componentes/AvisoDesconsolidacion"
 import TarjaPretarja from "./Componentes/TarjaPretarja"
 import { Component } from "react"; */
 //import Need from "./Need";
-import { LoginButton } from './Componentes/Login';
-import { Profile } from './Componentes/Profile';
-//import LogoutButton from './Componentes/Logout';
-import { useAuth0 } from '@auth0/auth0-react';
-import NavOpctiones from './Componentes/NavOpciones';
+
 //const { CredentialProvider } = require('react-rbac-guard');
 //const { guardFactory } = require("react-rbac-guard");
 
@@ -25,18 +35,6 @@ const PostManager = guardFactory(NeedManagePost)
 Route login
 Route logout
 Route Home */
-function RolesMain() {
-    //const credentials = "CanManageComment"
-    const { isAuthenticated } = useAuth0();
-    return (
-        <div>
-
-            { isAuthenticated ? <NavOpctiones/> : <LoginButton/> }
-        </div>
-
-    )
-}
-export default RolesMain;
 
 
     /* <CredentialProvider value= {credentials}>

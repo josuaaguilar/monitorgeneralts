@@ -1,11 +1,9 @@
-//import { useState } from "react"
 import IReferencias from '../Interfaces/IReferencias'
 interface Props {
     dsDatos: IReferencias[]
 }
 
 function ProgressReferencias(props: Props) {
-
     //const [ServiceWidth,setServiceWidth] = useState(0);
     const ServiceWidth = {
         width: '100%'
@@ -16,12 +14,10 @@ function ProgressReferencias(props: Props) {
     const SalidaWidth = {
         width: '10%'
     }
-    //props.dsDatos.map(e => console.log(e));
-    //props.dsDatos.map(Referencias => console.log(Referencias))
     return (
         
         <div className="container">
-            {props.dsDatos.map((e, index: number) => (
+            {props.dsDatos.map((Referencia, index: number) => (
                 <div className="row" key={index}>
                     <div className="col m-1">
                         <div className="progress">
@@ -30,8 +26,8 @@ function ProgressReferencias(props: Props) {
                         <div className="card bg-secondary mb-3">
                             <div className="card-header"><h3>Servicios</h3></div>
                             <div className="card-body">
-                                <h4>Bl / Booking: {e.BlBooking}</h4>
-                                <div className="card-text">Referencia Agente Aduanal: {e.ReferenciaAgenteAduanal}</div>
+                                <h4>Bl / Booking: {Referencia.BlBooking}</h4>
+                                <div className="card-text">Referencia Agente Aduanal: {Referencia.ReferenciaAgenteAduanal}</div>
                             </div>
                         </div>
                     </div>
@@ -42,8 +38,8 @@ function ProgressReferencias(props: Props) {
                         <div className="card bg-secondary mb-3">
                             <div className="card-header"><h2>Inventario</h2></div>
                             <div className="card-body">
-                                <h4>Bl/Booking: {e.BlBooking}</h4>
-                                <div className="card-text">Referencia Agente Aduanal: {e.ReferenciaAgenteAduanal}</div>
+                                <h4>Bl/Booking: {Referencia.BlBooking}</h4>
+                                <div className="card-text">Referencia Agente Aduanal: {Referencia.ReferenciaAgenteAduanal}</div>
                             </div>
                         </div>                        
                     </div>
@@ -54,8 +50,8 @@ function ProgressReferencias(props: Props) {
                         <div className="card bg-secondary mb-3">
                             <div className="card-header"><h2>Salida</h2></div>
                             <div className="card-body">
-                                <h4>Tipo Operacion: {e.TipoOperacionAduanera}</h4>
-                                <div className="card-text">Estado: {e.Estado}</div>
+                                <h4>Tipo Operacion: {Referencia.TipoOperacionAduanera}</h4>
+                                <div className="card-text">Estado: {Referencia.Estado}</div>
                             </div>
                         </div>
                     </div>
